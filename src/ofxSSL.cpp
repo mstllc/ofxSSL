@@ -12,12 +12,16 @@
 
 
 ofxSSL::ofxSSL() {
-    
+    ofAddListener(ofEvents().setup, this, &ofxSSL::setup);
+}
+
+ofxSSL::~ofxSSL() {
+    cleanup();
+	ofRemoveListener(ofEvents().setup, this, &ofxSSL::setup); // sets up any guis
 }
 
 //--------------------------------------------------------------
-void ofxSSL::init() {
-    
+void ofxSSL::setup(ofEventArgs &e) {
     curl_global_init(CURL_GLOBAL_ALL);
     handle = curl_easy_init();
     post = NULL;
@@ -31,13 +35,12 @@ void ofxSSL::init() {
 }
 
 //--------------------------------------------------------------
-void ofxSSL::setURL(std::string url) {
-    
+void ofxSSL::setURL(const string& url) {
     curl_easy_setopt(handle, CURLOPT_URL, url.c_str());
 }
 
 //--------------------------------------------------------------
-void ofxSSL::setOpt(CURLoption option, std::string value) {
+void ofxSSL::setOpt(CURLoption option, const string& value) {
     
     curl_easy_setopt(handle, option, value.c_str());
 }
@@ -49,13 +52,13 @@ void ofxSSL::setOpt(CURLoption option, int value) {
 }
 
 //--------------------------------------------------------------
-void ofxSSL::addFormField(std::string fieldName, std::string value) {
+void ofxSSL::addFormField(const string& fieldName, const string& value) {
     
     curl_formadd(&post, &last, CURLFORM_COPYNAME, fieldName.c_str(), CURLFORM_COPYCONTENTS, value.c_str(), CURLFORM_END);    
 }
 
 //--------------------------------------------------------------
-void ofxSSL::addFormField(CURLformoption optionA, std::string valueA, CURLformoption optionB, std::string valueB) {
+void ofxSSL::addFormField(CURLformoption optionA, const string& valueA, CURLformoption optionB, const string& valueB) {
     
     curl_formadd(&post, &last, optionA, valueA.c_str(), optionB, valueB.c_str());
 }
@@ -67,8 +70,7 @@ void ofxSSL::perform() {
     
     ret = curl_easy_perform(handle);
     if(CURLE_OK != ret) {
-        std::cerr << "Error from cURL: "
-        << curl_easy_strerror(ret) << std::endl;
+        ofLogError("ofxSSL") << curl_easy_strerror(ret);
     }
     
     if(post != NULL) curl_formfree(post);    
@@ -76,14 +78,12 @@ void ofxSSL::perform() {
 
 //--------------------------------------------------------------
 void ofxSSL::cleanup() {
-    
     curl_easy_cleanup(handle);
     if(post != NULL) curl_formfree(post); 
 }
 
 //--------------------------------------------------------------
-string ofxSSL::getString() {
-    
+string ofxSSL::getString() const {
     return content;
 }
 
