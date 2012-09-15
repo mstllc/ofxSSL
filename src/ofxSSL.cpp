@@ -11,13 +11,15 @@
 #include <string>
 
 
+//--------------------------------------------------------------
 ofxSSL::ofxSSL() {
     ofAddListener(ofEvents().setup, this, &ofxSSL::setup);
 }
 
+//--------------------------------------------------------------
 ofxSSL::~ofxSSL() {
     cleanup();
-	ofRemoveListener(ofEvents().setup, this, &ofxSSL::setup); // sets up any guis
+	ofRemoveListener(ofEvents().setup, this, &ofxSSL::setup);
 }
 
 //--------------------------------------------------------------
