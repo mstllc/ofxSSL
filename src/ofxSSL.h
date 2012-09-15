@@ -17,22 +17,24 @@ public:
     
     //constructor
     ofxSSL();
+    virtual ~ofxSSL();
     
     //methods
-    void init();
-    void setURL(string url);
-    void setOpt(CURLoption option, string value);
+    void setup(ofEventArgs &e);
+    void setURL(const string& url);
+    void setOpt(CURLoption option, const string& value);
     void setOpt(CURLoption option, int value);
-    void addFormField(string fieldName, string value);
-    void addFormField(CURLformoption optionA, string valueA, CURLformoption optionB, string valueB);
+    void addFormField(const string& fieldName, const string& value);
+    void addFormField(CURLformoption optionA, const string& valueA, CURLformoption optionB, const string& valueB);
     void perform();
-    void cleanup();
     
-    string getString();
-    
+    string getString() const;
+
+protected:
     //variables
     CURL* handle;
 
+    void cleanup();
     
 private:
     
