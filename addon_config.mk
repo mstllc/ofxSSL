@@ -6,6 +6,21 @@ meta:
 	ADDON_URL = https://github.com/thorsonmscott/ofxSSL
 
 common:
-	# linux only, any library that should be included in the project using
-	# pkg-config
+linux64:
+	ADDON_INCLUDES_EXCLUDE = libs
+	ADDON_INCLUDES_EXCLUDE += libs%
 	ADDON_PKG_CONFIG_LIBRARIES = libcurl
+linux:
+        ADDON_INCLUDES_EXCLUDE = libs
+        ADDON_INCLUDES_EXCLUDE += libs%
+        ADDON_PKG_CONFIG_LIBRARIES = libcurl
+linuxarmv6l:
+        ADDON_INCLUDES_EXCLUDE = libs
+        ADDON_INCLUDES_EXCLUDE += libs%
+        ADDON_PKG_CONFIG_LIBRARIES = libcurl
+linuxarmv7l:
+        ADDON_INCLUDES_EXCLUDE = libs
+        ADDON_INCLUDES_EXCLUDE += libs%
+        ADDON_PKG_CONFIG_LIBRARIES = libcurl
+android/armeabi:	
+android/armeabi-v7a:
