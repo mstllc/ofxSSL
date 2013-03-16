@@ -9,7 +9,7 @@
 		<string>42</string>
 		<key>objects</key>
 		<dict>
-			<key>c91d97b0394d15d1cbd4a38e0a58f495</key>
+			<key>a7194974f1802f822d71259c09d3071a</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -20,11 +20,11 @@
 				<key>name</key>
 				<string>typecheck-gcc.h</string>
 				<key>path</key>
-				<string>../../../addons/ofxSSL/libs/libcurl/includes/typecheck-gcc.h</string>
+				<string>../../../addons/ofxSSL/libs/libcurl/includes/curl/typecheck-gcc.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>052805f767021d56bacb0e2e644aed69</key>
+			<key>158418313c15f647e1d780f1befa74c9</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -35,11 +35,11 @@
 				<key>name</key>
 				<string>stdcheaders.h</string>
 				<key>path</key>
-				<string>../../../addons/ofxSSL/libs/libcurl/includes/stdcheaders.h</string>
+				<string>../../../addons/ofxSSL/libs/libcurl/includes/curl/stdcheaders.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>64947d6a51acce186cedfeb3aeb7728f</key>
+			<key>30a9bd1a545a52d70d3390a480f742c7</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -50,11 +50,11 @@
 				<key>name</key>
 				<string>multi.h</string>
 				<key>path</key>
-				<string>../../../addons/ofxSSL/libs/libcurl/includes/multi.h</string>
+				<string>../../../addons/ofxSSL/libs/libcurl/includes/curl/multi.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>952bd1f639d757bdd0880126e375b65a</key>
+			<key>795b5dacadec4a38e3f2a43fd61d8b7a</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -65,11 +65,11 @@
 				<key>name</key>
 				<string>mprintf.h</string>
 				<key>path</key>
-				<string>../../../addons/ofxSSL/libs/libcurl/includes/mprintf.h</string>
+				<string>../../../addons/ofxSSL/libs/libcurl/includes/curl/mprintf.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>aa1a063719cbe121bcaff65de54fa510</key>
+			<key>a870a0a467966a64d11765502bece7a5</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -80,11 +80,11 @@
 				<key>name</key>
 				<string>easy.h</string>
 				<key>path</key>
-				<string>../../../addons/ofxSSL/libs/libcurl/includes/easy.h</string>
+				<string>../../../addons/ofxSSL/libs/libcurl/includes/curl/easy.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>2ecf5a7f02d16d392ed6f23a168809a5</key>
+			<key>4d947cc5c784bbbf922f4836c556767b</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -95,11 +95,11 @@
 				<key>name</key>
 				<string>curlver.h</string>
 				<key>path</key>
-				<string>../../../addons/ofxSSL/libs/libcurl/includes/curlver.h</string>
+				<string>../../../addons/ofxSSL/libs/libcurl/includes/curl/curlver.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>16a93ad58c3895034d2ee394a8a6548d</key>
+			<key>2d921197b3a4a13133d54dd77799b78c</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -110,11 +110,11 @@
 				<key>name</key>
 				<string>curlrules.h</string>
 				<key>path</key>
-				<string>../../../addons/ofxSSL/libs/libcurl/includes/curlrules.h</string>
+				<string>../../../addons/ofxSSL/libs/libcurl/includes/curl/curlrules.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>04fee50149eb2791d300267a2333656d</key>
+			<key>5728cd202be4533b89533c04f443d266</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -125,23 +125,36 @@
 				<key>name</key>
 				<string>curlbuild.h</string>
 				<key>path</key>
-				<string>../../../addons/ofxSSL/libs/libcurl/includes/curlbuild.h</string>
+				<string>../../../addons/ofxSSL/libs/libcurl/includes/curl/curlbuild.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>a5e89ee8ec5c94dc7d1f2a8890e7539a</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>4650bfc4d3e2be5559e7b61162bba3ad</string>
+					<string>5728cd202be4533b89533c04f443d266</string>
+					<string>2d921197b3a4a13133d54dd77799b78c</string>
+					<string>4d947cc5c784bbbf922f4836c556767b</string>
+					<string>a870a0a467966a64d11765502bece7a5</string>
+					<string>795b5dacadec4a38e3f2a43fd61d8b7a</string>
+					<string>30a9bd1a545a52d70d3390a480f742c7</string>
+					<string>158418313c15f647e1d780f1befa74c9</string>
+					<string>a7194974f1802f822d71259c09d3071a</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>curl</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
 			</dict>
 			<key>140bdf811d279cab7d0885a884d37627</key>
 			<dict>
 				<key>children</key>
 				<array>
-					<string>20b8967c397b8a27cb42846ae271426b</string>
-					<string>04fee50149eb2791d300267a2333656d</string>
-					<string>16a93ad58c3895034d2ee394a8a6548d</string>
-					<string>2ecf5a7f02d16d392ed6f23a168809a5</string>
-					<string>aa1a063719cbe121bcaff65de54fa510</string>
-					<string>952bd1f639d757bdd0880126e375b65a</string>
-					<string>64947d6a51acce186cedfeb3aeb7728f</string>
-					<string>052805f767021d56bacb0e2e644aed69</string>
-					<string>c91d97b0394d15d1cbd4a38e0a58f495</string>
+					<string>a5e89ee8ec5c94dc7d1f2a8890e7539a</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
@@ -176,7 +189,7 @@
 				<key>sourceTree</key>
 				<string>&lt;group&gt;</string>
 			</dict>
-			<key>20b8967c397b8a27cb42846ae271426b</key>
+			<key>4650bfc4d3e2be5559e7b61162bba3ad</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -187,7 +200,7 @@
 				<key>name</key>
 				<string>curl.h</string>
 				<key>path</key>
-				<string>../../../addons/ofxSSL/libs/libcurl/includes/curl.h</string>
+				<string>../../../addons/ofxSSL/libs/libcurl/includes/curl/curl.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
@@ -672,6 +685,7 @@
 						<string>../../../addons/ofxSSL/libs</string>
 						<string>../../../addons/ofxSSL/libs/libcurl</string>
 						<string>../../../addons/ofxSSL/libs/libcurl/includes</string>
+						<string>../../../addons/ofxSSL/libs/libcurl/includes/curl</string>
 						<string>../../../addons/ofxSSL/libs/libcurl/lib</string>
 						<string>../../../addons/ofxSSL/libs/libcurl/lib/osx</string>
 						<string>../../../addons/ofxSSL/src</string>
@@ -740,6 +754,7 @@
 						<string>../../../addons/ofxSSL/libs</string>
 						<string>../../../addons/ofxSSL/libs/libcurl</string>
 						<string>../../../addons/ofxSSL/libs/libcurl/includes</string>
+						<string>../../../addons/ofxSSL/libs/libcurl/includes/curl</string>
 						<string>../../../addons/ofxSSL/libs/libcurl/lib</string>
 						<string>../../../addons/ofxSSL/libs/libcurl/lib/osx</string>
 						<string>../../../addons/ofxSSL/src</string>
