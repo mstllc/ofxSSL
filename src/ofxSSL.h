@@ -9,7 +9,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "curl.h"
+#include "curl/curl.h"
 #include <string>
 
 class ofxSSL {
