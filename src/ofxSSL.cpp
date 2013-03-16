@@ -1,25 +1,14 @@
-//
-//  ofxSSL.cpp
-//  sslTest
-//
-//  Created by Thorson, Max on 1/11/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
-#include <iostream>
 #include "ofxSSL.h"
-#include <string>
-
 
 //--------------------------------------------------------------
 ofxSSL::ofxSSL() {
-//    ofAddListener(ofEvents().setup, this, &ofxSSL::setup);
+    ofAddListener(ofEvents().setup, this, &ofxSSL::setup);
 }
 
 //--------------------------------------------------------------
 ofxSSL::~ofxSSL() {
     cleanup();
-//	ofRemoveListener(ofEvents().setup, this, &ofxSSL::setup);
+	ofRemoveListener(ofEvents().setup, this, &ofxSSL::setup);
 }
 
 //--------------------------------------------------------------
@@ -30,26 +19,9 @@ void ofxSSL::setup(ofEventArgs &e) {
     last = NULL;
     header_list = NULL;
     uploadFile = NULL;
-    curl_easy_setopt(handle, CURLOPT_NOPROGRESS, 0);
+    curl_easy_setopt(handle, CURLOPT_NOPROGRESS, ofGetLogLevel() <= OF_LOG_VERBOSE ? 0 : 1);
     curl_easy_setopt(handle, CURLOPT_SSL_VERIFYPEER, true);
-    curl_easy_setopt(handle, CURLOPT_VERBOSE, true);
-    curl_easy_setopt(handle, CURLOPT_CAINFO, ofToDataPath("cacert.pem").c_str());
-    curl_easy_setopt(handle, CURLOPT_WRITEFUNCTION, content_writer);
-    curl_easy_setopt(handle, CURLOPT_WRITEDATA, &content);
-    curl_easy_setopt(handle, CURLOPT_HEADERFUNCTION, header_writer);
-    curl_easy_setopt(handle, CURLOPT_HEADERDATA, &header);
-}
-
-void ofxSSL::setup(){
-    curl_global_init(CURL_GLOBAL_ALL);
-    handle = curl_easy_init();
-    post = NULL;
-    last = NULL;
-    header_list = NULL;
-    uploadFile = NULL;
-    curl_easy_setopt(handle, CURLOPT_NOPROGRESS, 0);
-    curl_easy_setopt(handle, CURLOPT_SSL_VERIFYPEER, true);
-    curl_easy_setopt(handle, CURLOPT_VERBOSE, true);
+    curl_easy_setopt(handle, CURLOPT_VERBOSE, ofGetLogLevel() <= OF_LOG_VERBOSE);
     curl_easy_setopt(handle, CURLOPT_CAINFO, ofToDataPath("cacert.pem").c_str());
     curl_easy_setopt(handle, CURLOPT_WRITEFUNCTION, content_writer);
     curl_easy_setopt(handle, CURLOPT_WRITEDATA, &content);
@@ -102,6 +74,9 @@ void ofxSSL::addHeader(string header_line){
 //--------------------------------------------------------------
 void ofxSSL::perform() {
     
+    curl_easy_setopt(handle, CURLOPT_VERBOSE, ofGetLogLevel() <= OF_LOG_VERBOSE);
+    curl_easy_setopt(handle, CURLOPT_NOPROGRESS, ofGetLogLevel() <= OF_LOG_VERBOSE ? 0 : 1);
+
     if(post != NULL) curl_easy_setopt(handle, CURLOPT_HTTPPOST, post);
     if(header_list != NULL) curl_easy_setopt(handle, CURLOPT_HTTPHEADER, header_list);
     
